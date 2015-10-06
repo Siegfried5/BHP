@@ -42,7 +42,7 @@ def main ():
 		usage()
 	# read the commandline options
 	try:
-		opts, args = getopt.getopt(sys,argv[1:],"hle:t:p:cu",["help","listen","execute","target","port","command","upload"])
+		opts, args = getopt.getopt(sys.argv[1:],"hle:t:p:cu",["help","listen","execute","target","port","command","upload"])
 	except getopt.GetoptError as err:
 		print str(err)
 		usage()
@@ -167,7 +167,8 @@ def client_handler(client_socket):
 
 			if not data:
 				break
-			else file_buffer += data
+			else: 
+				file_buffer += data
 
 		# now we take these bytes and try to write them out
 		try:
