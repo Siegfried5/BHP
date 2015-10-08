@@ -14,6 +14,7 @@ class Server (paramiko.ServerInterface):
 			return paramiko.OPEN_SUCCEEDED
 		return paramiko.OPEN_FAILED_ADMINISTRATIVELY_PROHIBITED
 	def check_auth_password(self, username, password):
+		
 		# Please fill in the blank
 		if (username=='ENTER A USERNAME') and (password== 'ENTER A PASSWORD'):
 			return paramiko.AUTH_SUCCESSFUL
@@ -46,3 +47,18 @@ try:
 	print chan.recv('Welcome to bh_ssh')
 	while True:
 		try:
+			command = raw_input("Enter command: ").strip('\n')
+			if command != 'exit':
+				chan.send(command)
+				print chan.recv(1024) + '\n'
+			else:
+				chan.send('exit')
+				print '[-] Exiting'
+				bhSession.close()
+		except Exception, e:
+			print '[-] Caught exception: ' + str(e)
+			try:
+				bhSession.close()
+			except:
+				pass
+			sys.exit(1)
