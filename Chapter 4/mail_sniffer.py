@@ -1,7 +1,7 @@
 from scapy.all import *
 
 # our packet callback
-def packet _callback(packet):
+def packet_callback(packet):
 	print packet.show()
 
 # fire up our sniffer
