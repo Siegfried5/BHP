@@ -6,7 +6,7 @@ import signal
 
 interface = "eth0"
 target_ip = "192.168.130.133"
-gateway_ip = "192.168.130.1"
+gateway_ip = "192.168.130.255"
 packet_count = 1000
 
 def restore_target(gateway_ip,gateway_mac,target_ip,target_mac):
