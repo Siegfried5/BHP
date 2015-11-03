@@ -5,8 +5,8 @@ import urllib2
 
 threads = 10
 
-target	= "http://www.blackhatpython.com"
-directory	= "/Users/justin/Downloads/joomla-3.1.1"
+target	= "http://192.168.130.133"
+directory	= "/"
 filters		= [".jpg",".gif","png",".css"]
 
 os.chdir(directory)
