@@ -24,9 +24,9 @@ for r,d,f in os.walk("."):
 def test_remote():
 	while not web_paths.empty():
 		path = web_paths.get()
-		url = "%s%s" (target,path)
+		url = "%s%s" % (target,path)
 
-		request = urllib2.request(url)
+		request = urllib2.Request(url)
 		try:
 			response = urllib2.urlopen(request)
 			content = response.read()
