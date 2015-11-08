@@ -29,7 +29,7 @@ def test_remote():
 		request = urllib2.Request(url)
 		try:
 			response = urllib2.urlopen(request)
-			content = response.read()
+			cont ent = response.read()
 
 			print "[%d] ==> %s" % (response.code,path)
 			response.close()
