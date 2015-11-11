@@ -58,3 +58,4 @@ class BHPFuzzer (IIntruderPayloadGenerator):
 
 		# select a random offset in the payload to mutate
 		offset = random.randint(0, len(original_payload)-1)
+		
