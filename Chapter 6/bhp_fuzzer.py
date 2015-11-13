@@ -77,7 +77,7 @@ class BHPFuzzer (IIntruderPayloadGenerator):
 			for i in range(repeater):
 				payload += original_payload[offset:offset+chunk_length]
 
-	# add the remaining bits of the payload
-	payload += original_payload[offset:]
+		# add the remaining bits of the payload
+		payload += original_payload[offset:]
 
-	return payload
+		return payload
