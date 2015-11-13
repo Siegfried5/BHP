@@ -58,4 +58,8 @@ class BHPFuzzer (IIntruderPayloadGenerator):
 
 		# select a random offset in the payload to mutate
 		offset = random.randint(0, len(original_payload)-1)
-		
+		payload = original_payload[:offset]
+
+		# random offset insert a SQL injections attempts
+		if picker == 1:
+			payload += "'"			
