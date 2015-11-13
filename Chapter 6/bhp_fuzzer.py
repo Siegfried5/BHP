@@ -62,4 +62,13 @@ class BHPFuzzer (IIntruderPayloadGenerator):
 
 		# random offset insert a SQL injections attempts
 		if picker == 1:
-			payload += "'"			
+			payload += "'"
+
+		# jam an XSS attemp in
+		if picker == 2:
+			payload += "<script>alert('BHP!');</script>"
+
+		# repeat a chunk of the original payload a random number
+		if picker == 3:
+
+			chunk_length = random.randint(len(payload[offset:]),len(payload)-1)
