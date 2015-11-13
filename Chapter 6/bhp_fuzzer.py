@@ -72,3 +72,12 @@ class BHPFuzzer (IIntruderPayloadGenerator):
 		if picker == 3:
 
 			chunk_length = random.randint(len(payload[offset:]),len(payload)-1)
+			repeater = random.randint(1,10)
+
+			for i in range(repeater):
+				payload += original_payload[offset:offset+chunk_length]
+
+	# add the remaining bits of the payload
+	payload += original_payload[offset:]
+
+	return payload
