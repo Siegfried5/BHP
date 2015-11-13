@@ -1,6 +1,6 @@
 import urllib2
 
-url = "http://google.com"
+url = "http://192.168.130.133"
 
 headers={}
 headers['User-Agent'] = "Googlebot"
