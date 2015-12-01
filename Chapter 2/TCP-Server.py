@@ -1,7 +1,7 @@
 import socket
 import threading
 
-bind_ip = "192.168.1.81"
+bind_ip = "127.0.0.1"
 bind_port = 9999
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -26,7 +26,7 @@ def handle_client(client_socket):
 
 while True:
 
-	client,addr=server.accpet()
+	client,addr=server.accept()
 
 	print "[+] Accepted connection from %s:%d" % (addr[0],addr[1])
 
