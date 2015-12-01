@@ -1,6 +1,6 @@
 import win32gui
 import win32ui
-import wincon
+import win32con
 import win32api
 
 # grab a handle to the main desktop windows
@@ -23,3 +23,13 @@ mem_dc = img_dc.CreateCompatibleDC()
 screenshot = win32ui.CreateBitmap()
 screenshot.CreateCompatibleBitmap(img_dc, width, height)
 mem_dc.SelectObject(screenshot)
+
+# copy the screen into our memory device context
+mem_dc.BitBlt((0,0), (width, height), img_dc, (left, top), win32con.SRCCOPY)
+
+# save the bitmap to a file
+screenshot.SaveBitmapFile(mem_dc, 'C:\\WINDOWS\\Temp\\screenshot.bmp')
+
+# free our objects
+mem_dc.DeleteDC()
+win32gui.DeleteObject(screenshot.GetHandle())
