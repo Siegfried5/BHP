@@ -7,7 +7,7 @@ from ctypes import *
 from netaddr import IPNetwork,IPAddress
 
 # host to listen on
-host = "192.168.250.39"
+host = "192.168.1.3"
 
 # subnet to target
 subnet = "192.168.250.0/24"
