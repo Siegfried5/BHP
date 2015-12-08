@@ -2,7 +2,7 @@ import SimpleHTTPServer
 import SocketServer
 import urllib
 
-class CredRequestHandler(SimpleHTTPSever.SimpleHTTPRequestHandler):
+class CredRequestHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
 
 	def do_POST(self):
 		content_length = int(self.headers['Content-Length'])
