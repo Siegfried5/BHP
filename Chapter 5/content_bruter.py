@@ -4,8 +4,8 @@ import Queue
 import urllib
 
 threads = 50
-target_url	= "http://192.168.130.133"
-wordlist_file	="/users/Siegfried/Desktop/rockyou.txt"
+target_url	= "http://testphp.vulnweb.com"
+wordlist_file	="all.txt"
 resume = None
 user_agent = "Mozilla/5.0 (X11; Linux x86_64; rv:19.0) Gecko/20100101 Firefox/19.0"
 
