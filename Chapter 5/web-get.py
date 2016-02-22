@@ -1,6 +1,6 @@
 import urllib2
 
-url = "http://192.168.130.133"
+url = "http://furr.me/index.php"
 
 headers={}
 headers['User-Agent'] = "Googlebot"

@@ -1,3 +1,5 @@
+#!/usr/env python
+
 import win32com.client
 import os
 import fnmatch
