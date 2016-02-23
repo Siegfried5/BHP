@@ -1,4 +1,4 @@
-#!/usr/env python
+#!/usr/bin/python
 
 import zlib
 import base64

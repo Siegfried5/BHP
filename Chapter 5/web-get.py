@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import urllib2
 
 url = "http://furr.me/index.php"

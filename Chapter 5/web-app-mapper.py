@@ -1,4 +1,4 @@
-#!/usr/env python
+#!/usr/bin/python
 
 import Queue
 import threading

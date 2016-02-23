@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import socket
 
 target_host= "www.google.com"

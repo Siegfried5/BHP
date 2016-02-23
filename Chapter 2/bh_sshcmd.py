@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import threading
 import paramiko
 import subprocess

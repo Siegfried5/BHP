@@ -1,4 +1,4 @@
-#!/usr/env python
+#!/usr/python
 
 import json
 import base64

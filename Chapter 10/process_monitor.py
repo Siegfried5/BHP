@@ -1,4 +1,4 @@
-#!/usr/env python
+#!/usr/python
 
 import win32con
 import win32api

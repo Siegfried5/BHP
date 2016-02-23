@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import socket
 import paramiko
 import threading

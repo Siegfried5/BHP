@@ -1,4 +1,4 @@
-#!/usr/env python
+#!/usr/bin/python
 
 import win32com.client
 import time

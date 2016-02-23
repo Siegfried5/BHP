@@ -1,4 +1,4 @@
-#!/usr/env python
+#!/usr/bin/python
 
 from Crypto.PublicKey import RSA 
 new_key = RSA.generate(2048, e=65537) 

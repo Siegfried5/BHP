@@ -1,4 +1,4 @@
-#!/usr/env python
+#!/usr/bin/python
 
 import threading
 from scapy.all import *
