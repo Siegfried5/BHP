@@ -2,7 +2,7 @@
 
 import urllib2
 
-url = "http://furr.me/index.php"
+url = "google.com"
 
 headers={}
 headers['User-Agent'] = "Googlebot"
